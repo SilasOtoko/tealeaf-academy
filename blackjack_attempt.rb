@@ -37,29 +37,6 @@ def calculate_total(cards)
   total
 end
 
-player_wins = 0
-dealer_wins = 0
-
-def wins_losses(win)
-  if win == 'player'
-    if player_wins == nil
-      player_wins = 1
-    else
-      player_wins += 1
-    end
-  elsif win == 'dealer'
-    if dealer_wins == nil
-      player_wins = 1
-    else
-      dealer_wins += 1
-    end
-  else
-    puts "Error with wins_losses input"
-  end
-  puts ""
-  puts "Wins: #{player_wins}, Losses: #{dealer_wins}"
-end
-
 play_again = 0
 winner = false
 
@@ -97,17 +74,14 @@ while play_again != 'n'
 
     if player_total == 21
       puts "Congrats Player! You have blackjack! You win!"
-      wins_losses('player')
       winner = true
     elsif player_total > 21
       puts "Bust! Dealer wins."
-      wins_losses('dealer')
       winner = true
     end
 
     if dealer_total == 21 && winner == false
       puts "Sorry, dealer has blackjack. You lose."
-      wins_losses('dealer')
       winner = true
     end
 
@@ -120,11 +94,9 @@ while play_again != 'n'
 
       if dealer_total == 21
         puts "Sorry, dealer has blackjack. You lose."
-        wins_losses('dealer')
         winner = true
       elsif dealer_total > 21
         puts "Dealer busts! You win!"
-        wins_losses('player')
         winner = true
       end
     end
@@ -136,12 +108,10 @@ while play_again != 'n'
       elsif player_total < dealer_total
         puts "Player score: #{player_total}, Dealer score: #{dealer_total}"
         puts "Dealer wins."
-        wins_losses('dealer')
         winner = true
       elsif player_total > dealer_total
         puts "Player score: #{player_total}, Dealer score: #{dealer_total}"
         puts "Player wins!"
-        wins_losses('player')
         winner = true
       end
     end
