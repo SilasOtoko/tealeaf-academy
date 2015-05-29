@@ -67,7 +67,6 @@ end
 # Start Game #
 puts "Let's play Blackjack!"
 
-while play_again != 'n'
   #deal player and dealer 2 cards
   player_hand << deck.pop
   dealer_hand << deck.pop
@@ -157,4 +156,3 @@ while play_again != 'n'
   else
     puts "It's a tie!"
   end
-end
