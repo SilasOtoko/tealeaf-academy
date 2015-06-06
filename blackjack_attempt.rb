@@ -63,7 +63,7 @@ while play_again != 'n'
       if !["hit", "stay"].include? hit_or_stay
         puts "Please enter either hit or stay"
       elsif hit_or_stay == 'hit'
-        player_hand << deck.sample
+        player_hand << deck.pop
         player_total = calculate_total(player_hand)
         puts "Player's total: #{player_total}"
         puts ""
@@ -86,7 +86,7 @@ while play_again != 'n'
     end
 
     while dealer_total < 17 && winner == false
-      dealer_hand << deck.sample
+      dealer_hand << deck.pop
       puts "Dealing new card to dealer"
       dealer_total = calculate_total(dealer_hand)
       puts "Dealer's total: #{dealer_total}"
