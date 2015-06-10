@@ -1,3 +1,8 @@
+body{
+  color: #f9f9f9;
+}
+
+
 form#hit_form{
   float: left;
   margin-right: 10px;
@@ -5,8 +10,57 @@ form#hit_form{
 
 form#stay_form{
   float: left;
+  margin-right: 10px;
 }
 
-img.card_image{
+img.card_image,
+img#cover{
   margin: 0px 5px 5px 0px;
+  border-radius: 8px;
+  width: 150px;
+}
+
+#background{
+  background-image: url('/images/blackjack_table.jpg') !important;
+  background-repeat:no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+}
+
+.well{
+  background-color: transparent;
+  border-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.white{
+  color: #f9f9f9;
+}
+
+#start_over{
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px;
+  float: right;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#start_over a{
+  color: #333;
+}
+
+#start_over a:hover{
+  color: #888;
+  text-decoration: none;
+}
+
+.left{
+  float: left;
+}
+
+p{
+  clear: both;
 }
