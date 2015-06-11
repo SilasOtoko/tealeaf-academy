@@ -1,8 +1,13 @@
 $(document).ready(function(){
-  alert("I'm working");
-  console.log("work");
-  $('#hit_form input').click(function(){
-    alert('hit button clicked!');
+
+  $(document).on('click', '#hit_form input', function(){
+    $.ajax({
+      type: 'POST',
+      url: '/game/player/hit'
+    }).done(function(msg){
+      $('#game').replaceWith(msg);
+    });
     return false;
   });
+
 });
