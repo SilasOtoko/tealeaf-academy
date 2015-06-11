@@ -4,9 +4,13 @@
     <title>My First App</title>
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/application.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script scr="/application.js"></script>
   </head>
   <body id="background">
-
+  <script>
+    alert("hello");
+  </script>
   <div class="container">
     <%if @error %>
       <div class="alert alert-error"><%=@error%></div>
