@@ -23,7 +23,7 @@ img#cover{
 #background{
   background-image: url('/images/blackjack_table.jpg') !important;
   background-repeat:no-repeat;
-  background-size: cover;
+  background-position: cover;
   margin: 0;
   padding: 0;
   padding-top: 20px;
