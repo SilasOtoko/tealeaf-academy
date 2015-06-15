@@ -131,14 +131,13 @@ get '/game' do
   session[:dealer_cards] = []
   session[:player_cards] = []
   session[:dealer_cards] << session[:deck].pop
-  # session[:player_cards] << session[:deck].pop
+  session[:player_cards] << session[:deck].pop
   session[:dealer_cards] << session[:deck].pop
-  # session[:player_cards] << session[:deck].pop
+  session[:player_cards] << session[:deck].pop
 
-  session[:player_cards] = [['H', '10'], ['D', 'A']]
-
-   player_total = calculate_total(session[:player_cards])
-   dealer_total = calculate_total(session[:dealer_cards])
+  player_total = calculate_total(session[:player_cards])
+  dealer_total = calculate_total(session[:dealer_cards])
+  
   if player_total == BLACKJACK_AMOUNT && dealer_total != BLACKJACK_AMOUNT
     winner!("#{session[:player_name]} hit blackjack.")
     session[:turn] = 'dealer'
