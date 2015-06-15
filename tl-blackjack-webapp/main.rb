@@ -140,7 +140,8 @@ get '/game' do
    player_total = calculate_total(session[:player_cards])
    dealer_total = calculate_total(session[:dealer_cards])
   if player_total == BLACKJACK_AMOUNT && dealer_total != BLACKJACK_AMOUNT
-    redirect 'game/dealer'
+    winner!("#{session[:player_name]} hit blackjack.")
+    session[:turn] = 'dealer'
   elsif player_total == BLACKJACK_AMOUNT && dealer_total == BLACKJACK_AMOUNT
     tie!("Dealer and Player both have blackjack. It's a push!")
     session[:player_pot] = params[:bet_amount].to_i + session[:player_pot]
